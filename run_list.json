@@ -1,0 +1,9 @@
+{
+  "run_list": ["role[bigappserver]"],
+  "users": {
+      "joshua": {
+        "ssh_keys": {"mypublickey": "different_value", "another_key": "new_value"},
+        "password": "$1$vD8Hgg/z$2bCLq9CjF4Y6sui0C9P920"
+      }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "json_class": "Chef::Role",
+  "name": "bigappserver",
+  "description": "Big Rails app server",
+  "run_list": ["role[appserver]"],
+  "default_attributes": {
+    "nginx": {
+      "worker_processes": 10
+    }
+  }
+}

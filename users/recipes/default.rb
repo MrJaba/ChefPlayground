@@ -1,19 +1,18 @@
 require_recipe 'ruby-shadow'
 
+# this is pulled in from the run_list.json file
 node[:users].each do |name, conf|
-  
   home_dir = "/home/#{name}"
-  
   user name do
     password conf[:password]
     action [:create]
   end
-  
+
   directory home_dir do
     owner name
     mode 0700
   end
-  
+
   directory "#{home_dir}/.ssh" do
     owner name
     mode 0700

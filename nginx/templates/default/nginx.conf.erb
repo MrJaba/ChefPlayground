@@ -1,4 +1,4 @@
-user www-data;
+user <%= @user %>;
 worker_processes  <%= @node[:nginx][:worker_processes] %>;
 
 error_log  /var/log/nginx/error.log;
@@ -17,6 +17,7 @@ http {
     sendfile        on;
     #tcp_nopush     on;
 
+    #keepalive_timeout  0;
     keepalive_timeout  5;
     tcp_nodelay        on;
 
